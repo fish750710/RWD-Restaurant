@@ -81,7 +81,7 @@ body {
   .header .logo h1 a {
     float: left;
     display: block;
-    background: url(../img/logo_w.png);
+    background: url(../img/LOGO-white.png);
     width: 120px;
     height: 24px;
     margin-left: 20px;
@@ -627,7 +627,6 @@ body {
     color: #3D1101; }
   .map .map-img {
     float: left;
-    background-image: url(../img/Map.png);
     width: 462px;
     height: 388px; }
   .map .labelright {

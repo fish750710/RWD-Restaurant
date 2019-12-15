@@ -168,13 +168,40 @@ $(document).ready(function() {
 
 
 
-   
-   
-
-
-
-
-  
 
 
 });
+
+// Google Map API
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('Googlemap'), {
+    center: { lat: 25.084387, lng: 121.495126 },  //地圖的中心位置
+    zoom: 17
+  });
+
+  let data = [
+    {
+      position: { lat: 25.083367, lng: 121.495756 },
+      map: map, //指定到這一個map
+      title: '我標註的位置一' //游標滑過去顯示文字
+    },
+    {
+      position: { lat: 25.082842, lng: 121.496115 },
+      map: map, //指定到這一個map
+      title: '我標註的位置二' //游標滑過去顯示文字
+
+    }
+  ];
+
+  for (let i = 0; i < data.length; i++) {
+    let marker = new google.maps.Marker(data[i]);
+  };
+
+  //標註一個點
+  // var marker = new google.maps.Marker({
+  //   position: { lat: 25.083367, lng: 121.495756 },
+  //   map: map, //指定到這一個map
+  //   title: '我標註的位置' //游標滑過去顯示文字
+  // });
+}
