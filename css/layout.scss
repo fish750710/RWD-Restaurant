@@ -1,0 +1,583 @@
+.wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #FAF0F0;
+
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+
+.header {
+
+    height: 56px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 20px;
+
+    .logo h1 a {
+        float: left;
+        display: block;
+        background: url(../img/logo_w.png);
+        width: 120px;
+        height: 24px;
+        margin-left: 20px;
+        @include hide-text();
+    }
+
+    .menu {
+        float: right;
+
+        li {
+            float: left;
+
+            a {
+                text-decoration: none;
+                padding: 10px 20px;
+                font-size: $font-size-16;
+                color: #fff;
+                font-weight: bold;
+                display: block;
+
+                &:hover, &:focus, &:active{
+                    background: #303030;
+
+                }
+                &.active {
+                    // border-bottom: 2px solid #e26789;
+                    box-shadow: 0 -2px 0 #e26789 inset; //inset下方
+                }
+            }
+        }
+    }
+
+    .menuButton {
+        display: none;
+        float: right;
+
+        a {
+            width: 50px;
+            height: 50px;
+            padding: 22.5px 5px;
+            display: block;
+
+            //漢堡線條
+            span {
+                //中間線條
+                width: 35px;
+                height: 5px;
+                background-color: #fff;
+                display: block;
+                -webkit-transition: all 0.6s ease;
+                -moz-transition: all 0.6s ease;
+                -ms-transition: all 0.6s ease;
+                -o-transition: all 0.6s ease;
+                transition: all 0.6s ease;
+
+                &:before,
+                &:after {
+                    //上下線條
+                    content: '';
+                    position: absolute;
+                    width: 35px;
+                    height: 5px;
+                    background-color: #fff;
+                    display: block;
+                    -webkit-transition: all 0.6s ease;
+                    -moz-transition: all 0.6s ease;
+                    -ms-transition: all 0.6s ease;
+                    -o-transition: all 0.6s ease;
+                    transition: all 0.6s ease;
+                }
+
+                &:before {
+                    margin-top: 10px;
+                }
+
+                &:after {
+                    margin-top: -10px;
+                }
+            }
+
+        }
+
+        //旋轉動畫
+        .change span {
+            background-color: rgba(0, 0, 0, 0);
+
+            &:before {
+                margin-top: 0;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+            &:after {
+                margin-top: 0;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+
+    }
+
+}
+
+@include pad() {
+    .header {
+    	//漢堡選單
+        .menuButton {
+            display: block;
+
+        }
+
+        .menu {
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 45px;
+            right: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.75);
+
+            li {
+                float: none;
+
+                a {
+                    border-bottom: dashed #bbc4c7 1px;
+                    padding: 10px;
+                    text-align: center;
+                    letter-spacing: 12px;
+
+                    &:hover {
+                        background: #999;
+                        transition: all .7s;
+
+                        span {
+                            /*底圖不動字動*/
+                            transform: translateX(7px);
+                            transition: all .5s;
+                        }
+                    }
+
+                }
+
+                span {
+                    display: block;
+                    transition: all .5s;
+                }
+
+            }
+
+        }
+        
+
+    }
+
+    // 顯示下拉選單
+    .show-menu .menu {
+        max-height: 500px;
+    }
+    // 選單以外區域
+    .close-menu{
+        position: fixed;
+        background: rgba(0, 0, 0, 0);        
+        width: 100%;
+        min-height: 1024px;
+        z-index: 99 ;
+        display: block;
+        
+    }
+    
+    
+}
+
+
+
+@include m480() {}
+
+@include iphone5() {}
+
+
+
+
+
+
+
+
+
+
+
+.banner-img-1 {
+    background-image: url(../img/header_desktop.png) ;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center; //圖片維持置中
+   
+    height: 420px;
+    // position: relative;
+    // top: 0;
+    @include pad(){
+    	
+
+    }
+    @include m480() {
+		background: url(../img/header_mobile.png);
+		background-repeat: no-repeat;   		
+   		background-position: center; //圖片維持置中
+   		 display:block;
+	  	width: 100%;
+	  	height: 0;
+	  	padding-bottom:60%;
+	  	overflow:hidden;
+	    background-size:cover; //裝置大小一樣
+	
+    }
+
+	@include iphone5() {
+		
+	}
+
+    .title {
+        position: relative;
+        top: 100px;
+        
+        margin: 0 auto;
+        width: 460px;
+        height: 152px;
+        background: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        color: #fff;
+
+        h3 {
+            font-size: $font-size-36;
+            padding-top: 30px;
+        }
+
+        p {
+            padding-top: 30px;
+            line-height: 1.5;
+        }
+        @include m480(){
+        	position: relative;
+        	top: 70px;
+        	width: 400px;
+        	h3{
+        		font-size: $font-size-26;
+        	}
+        }
+        @include iphone5(){
+            top:40px;
+            width: 320px;
+        }
+
+    }
+}
+.banner-img-2 {
+    background-image: url(../img/Delicious_1024x768.jpg) ;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center; //圖片維持置中
+   
+    height: 420px;
+    // position: relative;
+    // top: 0;
+    @include pad(){
+        
+
+    }
+    @include m480() {
+        background: url(../img/Delicious_640x960.jpg);
+        background-repeat: no-repeat;           
+        background-position: center; //圖片維持置中
+         display:block;
+        width: 100%;
+        height: 0;
+        padding-bottom:60%;
+        overflow:hidden;
+        background-size:cover; //裝置大小一樣
+    
+    }
+
+    @include iphone5() {
+        
+    }
+
+    .title {
+        position: relative;
+        top: 100px;
+        
+        margin: 0 auto;
+        width: 460px;
+        height: 152px;
+        background: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        color: #fff;
+
+        h3 {
+            font-size: $font-size-36;
+            padding-top: 30px;
+        }
+
+        p {
+            padding-top: 30px;
+            line-height: 1.5;
+        }
+        @include m480(){
+            position: relative;
+            top: 70px;
+            width: 400px;
+            h3{
+                font-size: $font-size-26;
+            }
+        }
+        @include iphone5(){
+            top:40px;
+            width: 320px;
+        }
+
+    }
+}
+.banner-img-3 {
+    background-image: url(../img/BBQ-1280x800.jpg) ;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center; //圖片維持置中
+   
+    height: 420px;
+    // position: relative;
+    // top: 0;
+    @include pad(){
+        
+
+    }
+    @include m480() {
+        background: url(../img/BBQ-640x960.jpg);
+        background-repeat: no-repeat;           
+        background-position: center; //圖片維持置中
+         display:block;
+        width: 100%;
+        height: 0;
+        padding-bottom:60%;
+        overflow:hidden;
+        background-size:cover; //裝置大小一樣
+    
+    }
+
+    @include iphone5() {
+        
+    }
+
+    .title {
+        position: relative;
+        top: 100px;
+        
+        margin: 0 auto;
+        width: 460px;
+        height: 152px;
+        background: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        color: #fff;
+
+        h3 {
+            font-size: $font-size-36;
+            padding-top: 30px;
+        }
+
+        p {
+            padding-top: 30px;
+            line-height: 1.5;
+        }
+        @include m480(){
+            position: relative;
+            top: 70px;
+            width: 400px;
+            h3{
+                font-size: $font-size-26;
+            }
+        }
+        @include iphone5(){
+            top:40px;
+            width: 320px;
+        }
+
+    }
+}
+.banner-img-4 {
+    background-image: url(../img/sla-1024.jpg) ;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center; //圖片維持置中
+   
+    height: 420px;
+    // position: relative;
+    // top: 0;
+    @include pad(){
+        
+
+    }
+    @include m480() {
+        background: url(../img/sla-640.jpg);
+        background-repeat: no-repeat;           
+        background-position: center; //圖片維持置中
+         display:block;
+        width: 100%;
+        height: 0;
+        padding-bottom:60%;
+        overflow:hidden;
+        background-size:cover; //裝置大小一樣
+    
+    }
+
+    @include iphone5() {
+        
+    }
+
+    .title {
+        position: relative;
+        top: 100px;
+        
+        margin: 0 auto;
+        width: 460px;
+        height: 152px;
+        background: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        color: #fff;
+
+        h3 {
+            font-size: $font-size-36;
+            padding-top: 30px;
+        }
+
+        p {
+            padding-top: 30px;
+            line-height: 1.5;
+        }
+        @include m480(){
+            position: relative;
+            top: 70px;
+            width: 400px;
+            h3{
+                font-size: $font-size-26;
+            }
+        }
+        @include iphone5(){
+            top:40px;
+            width: 320px;
+        }
+
+    }
+}
+
+.footer {
+
+    padding: 50px;
+    background-color: #FAF0F0;
+}
+
+.footer-about {
+    float: left;
+    width: 35%;
+    color: $font-color-main;
+
+    h3 {
+        font-size: $font-size-24;
+    }
+
+    p {
+        font-size: $font-size-16;
+        padding-top: 20px;
+        padding-right: 10px;
+        line-height: 1.3;
+    }
+    
+}
+
+
+.footer-connection {
+    float: left;
+    width: 35%;
+    color: $font-color-main;
+
+    h3 {
+        font-size: $font-size-24;
+    }
+
+    p {
+        font-size: $font-size-16;
+
+    }
+
+    ul {
+        list-style: disc;
+        padding-top: 20px;
+        padding-left: 20px;
+
+        li {
+            padding: 5px;
+        }
+    }
+}
+
+
+.footer-logo {
+    width: 30%;
+    float: right;
+
+    h2 {
+
+        font-size: 49px;
+        color: $font-color-main;
+        font-weight: bold;
+    }
+
+}
+
+.footer-icon {
+    float: right;
+    font-size: 36px;
+    padding-right: 15px;
+
+    li {
+        float: right;
+        padding: 20px 10px;
+    }
+
+    .facebook i {
+        color: #3A5795;
+    }
+
+    .twitter i {
+        color: #41ABE1;
+    }
+
+    .google i {
+        color: #DB4437;
+    }
+
+}
+@include pad(){
+    .footer-connection {
+    
+    width: 50%;
+    }
+    .footer-logo {
+        display:none;
+    }
+        
+}
+@include m568(){
+    .footer{
+        padding:20px;
+    }
+    .footer-about , .footer-connection , .footer-logo  {
+        display: none;
+    }
+}

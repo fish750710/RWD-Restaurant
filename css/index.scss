@@ -1,0 +1,496 @@
+.secret {
+    // padding: 50px;
+
+    .secret-title {
+        font-size: $font-size-20;
+        font-weight: bold;
+        line-height: 2;
+        text-align: center;
+        color: $font-color-main;
+        margin-top: 50px;
+    }
+
+    li {
+        float: left;
+        width: 30%;        
+        margin: 50px 1.5%;
+        min-width: 200px;
+        padding: 10px 2%;
+        text-align: center;
+        font-weight: bold;
+        color: $font-color-main;
+
+        h3 {
+            font-size: $font-size-18;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: $font-size-16;
+            text-align: left;
+            line-height: 1.5;
+        }
+    }
+
+    img {
+
+        display: block;
+        margin: auto;
+        padding: 20px 0;
+        border-radius: 100%;
+    }
+}
+
+@include m480() {
+    .secret {
+        padding: 10px;
+
+        li {
+            width: 100%;
+
+            h3 {
+                font-size: $font-size-22;
+            }
+
+            p {
+                font-size: $font-size-20;
+            }
+        }
+
+    }
+
+}
+
+.chef {
+    margin-top:50px;
+    float: left;
+    background-color: $font-color-main;
+    // height: 460px;
+    padding: 0 1%;
+
+    .chef-img {
+        float: left;
+        background-image: url(../img/main_chef_brown.png);
+        width: 470px;
+        height: 460px;
+        // margin-right: 3%;
+    }
+
+    .chef-about {
+        // background-color: $font-color-main;
+        float: left;
+        // width: 50%;
+        width: calc(100% - 470px);
+        ; //圖片大小固定右邊介紹自適應延伸
+        padding: 30px 2%;
+        color: $font-color-secondary;
+
+        h3 {
+            font-size: $font-size-20;
+            padding-top: 30px;
+            padding-bottom: 8px;
+        }
+
+        p {
+            font-size: $font-size-16;
+            line-height: 1.3;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@include pad() {
+    .chef {
+        padding: 0;
+
+        .chef-img {
+            float: none;
+            margin: 0 auto;
+
+        }
+
+        .chef-about {
+            float: none;
+            width: 100%;
+            padding: 30px 5%;
+
+            h3 {
+                font-size: $font-size-22;
+            }
+
+            p {
+                font-size: $font-size-18;
+            }
+        }
+    }
+}
+
+@include m480 {
+    .chef {
+
+        .chef-img {
+            width: 100%;
+
+        }
+
+        .chef-about {
+
+            h3 {
+                font-size: $font-size-24;
+            }
+
+            p {
+                font-size: $font-size-20;
+            }
+        }
+    }
+
+
+}
+
+@include iphone5() {
+    .chef {
+
+        .chef-img {
+            width: 100%;
+            height: 250px;
+        }
+
+        .chef-about {
+
+            h3 {
+                font-size: $font-size-26;
+            }
+
+            p {
+                font-size: $font-size-20;
+            }
+        }
+    }
+}
+
+.evaluation {
+    //位移漸出
+    opacity:0;
+    transition:all 1.5s;
+    transform:translateY(80px);
+
+    padding: 50px 20px;
+
+    .evaluation-title {
+        font-size: $font-size-20;
+        font-weight: bold;
+        line-height: 2;
+        text-align: center;
+        color: $font-color-main;
+    }
+
+    li {
+        float: left;
+        width: 30%;
+        margin-right: 1.5%;
+        margin-left: 1.5%;
+        // min-width:300px;
+        padding: 10px 20px;
+        // text-align:center;
+        font-weight: bold;
+        color: $font-color-main;
+
+        h4 {
+            font-size: $font-size-18;
+            padding-bottom: 10px;
+            margin-top: 50px;
+
+        }
+
+        p {
+            float: left;
+            width:60% ;
+            font-size: $font-size-16;
+            text-align: left;
+            line-height: 1.5;
+            
+        }
+
+        img {
+            min-width: 67px;
+            margin-right: 10px;
+            float: left;
+            display: block;
+            // margin:auto;
+            padding: 20px 0;
+            border-radius: 100%;
+            width: 50px;
+        }
+
+        span {
+            
+            float: right;
+            color: $font-color-main;
+            font-weight: normal;
+        }
+    }
+
+
+}
+
+.evaluation-fadeIn{
+    //位移漸出
+    opacity:1;
+    transform: translateY(0);
+   
+}
+
+@include pad() {
+    .evaluation {
+        .evaluation-title {
+            font-size: $font-size-24;
+        }
+
+        li {
+            width: 100%;
+            height: 200px;
+
+            h4 {
+                font-size: $font-size-20;
+                ;
+            }
+
+            p {
+                font-size: $font-size-18;
+                ;
+            }
+        }
+
+    }
+
+}
+
+@include m480() {
+    .evaluation {
+        padding: 20px;
+
+        li {
+            width: 100%;
+            height: 250px;
+        }
+
+    }
+
+}
+
+@include iphone5() {
+    .evaluation {
+        padding: 10px;
+
+        li {
+            padding: 10px;
+            width: 100%;
+            height: 300px;
+        }
+
+    }
+
+}
+
+.map {
+    float: left;
+    padding: 2%;
+    width: 100%;
+    margin:  0;
+
+    .map-title {
+        font-size: $font-size-24;
+        padding: 5% 10%;
+        text-align: center;
+        line-height: 1.5;
+        color: $font-color-main;
+    }
+
+    .map-img {
+        float: left;
+        background-image: url(../img/Map.png);
+        width: 462px;
+        height: 388px;
+        // margin-right: 2%;
+    }
+
+    .labelright {
+        float: left;
+        font-weight: bold;
+        width: calc(100% - 462px);
+        padding: 0 1%;
+
+
+
+        p {
+            // float: left;
+            width: 100%;
+            padding: 10px 2%;
+            color: $font-color-main;
+
+        }
+
+        input {
+            width: 95%;
+            padding: 5px 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+
+        }
+
+        .veg-A {
+            // float: left;
+            width: 100%;
+            margin: 30px 0;
+
+            li {
+                width: 30%;
+                float: left;
+                padding-left: 2%;
+                padding-right: 1%;
+
+
+                .veg-need-Y {
+                    // margin:10px;
+                    width: 20px;
+                }
+
+                .veg-need-N {
+                    // margin:10px;
+                    width: 20px;
+                }
+            }
+
+        }
+
+
+
+
+
+        label {
+            // float: left;
+            padding-left: 2%;
+
+        }
+
+        .form-btn {
+            float: left;
+            margin: 20px 0;
+            width: 100%;
+
+            li {
+
+
+                .submit {
+                    width: 70px;
+                    background: $btn-color-og;
+                    border-radius: 3px;
+                    color: #fff;
+                    float: right;
+
+                    // margin-top:20px;
+                    margin-right: 5%;
+                    padding: 10px;
+                    border: none;
+                    font-weight: bold;
+                }
+
+                .clear {
+                    width: 70px;
+
+                    background: rgba(0, 0, 0, 0.35);
+                    border-radius: 3px;
+                    color: #fff;
+                    float: right;
+
+                    // margin-top:20px;
+                    margin-right: 20px;
+                    padding: 10px;
+                    border: none;
+                    font-weight: bold;
+                }
+
+                .submit:hover {
+                    background: #D65510;
+                    cursor: pointer;
+                    color: #fff;
+                    font-weight: bold;
+                }
+
+                .clear:hover {
+                    background: #8A8988;
+                    cursor: pointer;
+                    color: #fff;
+                    font-weight: bold;
+                }
+
+            }
+
+        }
+
+    }
+}
+
+@include pad() {
+    .map {
+
+        .labelright {
+
+            width: calc(100% - 462px);
+            padding: 0 1%;
+
+            p {
+                
+                width: 100%;
+
+            }
+
+            input {
+                width: 100%;
+                font-size: $font-size-16;
+
+            }
+
+            .form-btn {
+                
+                li {
+                    .submit {                      
+
+                        margin-top:2%;                       
+
+                    }
+
+                    .clear {                        
+
+                        margin-top:2%;
+                        margin-right: 2%;                      
+
+                    }
+                }
+            }
+        }
+    }
+}
+//iphone 5橫置
+@include m568() {
+    .map {
+        
+        padding: 2%;
+
+        .map-img {
+            width: 100%;
+            background-repeat: no-repeat;            
+            margin-right: 1%;
+        }
+
+        .labelright {
+            float: none;
+
+            width: 100%;
+
+            padding: 0 1%;          
+
+        }
+    }
+}

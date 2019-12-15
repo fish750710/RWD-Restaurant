@@ -1,0 +1,15 @@
+@import "_reset.scss";
+@import "_variable.scss";
+
+@import 'mixin/grid.scss';
+@import "mixin/hide-text.scss";
+
+@import 'layout.scss';
+
+//module
+// @import 'module'; //button, form, table 
+
+//page
+@import 'index.scss';
+@import 'login.scss';
+@import 'shop.scss';
